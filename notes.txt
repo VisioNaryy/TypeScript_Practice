@@ -1,0 +1,89 @@
+1)NOTE: tsc-node file.ts - runs and compile file.ts into file.js 
+
+//'axios' package
+https://www.npmjs.com/package/axios
+
+2)NOTE: Parcel
+
+npm install -g parcel-bundler
+parcel file.ts - runs and compile file.ts to run it in the browser
+
+//'faker' package
+https://www.npmjs.com/package/faker
+npm install faker
+
+npm install @types/faker - to be able to use it in the .ts files as an imported library, because it's a js lirary
+
+ctrl+click/f12 on the name of the library - go to the definition
+
+TODO: adding a support of Google Maps
+1. Generate a Google Dev Project 
+
+Google cloud platform -> APIs & services -> create new project -> library -> maps javascript api
+
+2. Enable Google Maps support inside the project
+
+3. Generate an API key
+
+4. Add the google maps script tag to our HTML file
+
+<script src="https://maps.googleapis.com/maps/api/js?/key="></script> - check it in the network tab
+
+npm install --save @types/googlemaps
+
+3)NOTE: sort project
+
+tsc --init : to create tsconfig.json
+npm init -y : to create package.json
+
+TODO: to tell compiler to compile all sourse code to /build folder and etc: (in tsconfig.json)
+
+"outDir": "./build" /* Redirect output structure to the directory. */,
+"rootDir": "./src" /* Specify the root directory of input files. Use to control the output directory 
+
+tsc-w : the compile is going to recompile all changed code automatically
+
+npm install nodemon concurrently
+
+in package.json in scripts: {} type :
+
+   "start:build": "tsc-w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+
+then when we are typing npm:start, the code will be builded and outputed in console automatically
+
+4)NOTE: csv project (stats)
+
+tsc --init : to create tsconfig.json
+npm init -y : to create package.json
+npm install nodemon concurrently
+
+TODO: open a csv file using js methods and libraries
+
+1. To work with js libraries, we need to install type definition file:
+npm install @types/node
+
+copy nul >  (create a new file)
+
+NOTE: custom framework
+
+1) TODO: setup json server
+npm install -g json-server
+
+in root folder create file db.json
+
+json-server -w db.json
+
+npm install axios 
+
+parcel index.html
+
+2) REST conventions
+
+NOTE: In Typescript strings can be values; In JS and TS all object keys are strings
+
+NOTE: BUG: In js code inside a class-constructor will be executed BEFORE code in properties, so we always should assign any property directly in the constructor like: constructor(public propName: string){}, but not inside.
+
+5)server_app
+
